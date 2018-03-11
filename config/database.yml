@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  password:
+  username: gpereira
+  timeout: 5000
+
+development:
+  <<: *default
+  database: travis_rspec_dev
+
+test:
+  <<: *default
+  database: travis_rspec_test
+
+production:
+  <<: *default
+  database: travis_rspec_dev
