@@ -12,10 +12,10 @@
   "script": [
     "bundle exec rake db:schema:load",
     "bundle exec rake db:test:prepare",
-    "bundle exec rspec && bundle exec rspec --only-failures"
+    "bundle exec rspec && echo $? && bundle exec rspec --only-failures && echo $? && bundle exec rspec --only-failures && echo $?"
   ],
   "after_script": [
-    "echo $TRAVIS_TEST_RESULT"
+    "echo $?"
   ],
   "os": "linux",
   "group": "stable",
