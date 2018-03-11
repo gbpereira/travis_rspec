@@ -12,10 +12,7 @@
   "script": [
     "bundle exec rake db:schema:load",
     "bundle exec rake db:test:prepare",
-    "bundle exec rspec && echo $? && bundle exec rspec --only-failures && echo $? && bundle exec rspec --only-failures && echo $?"
-  ],
-  "after_script": [
-    "echo $?"
+    "bundle exec rspec-redo --retry-count 5"
   ],
   "os": "linux",
   "group": "stable",
